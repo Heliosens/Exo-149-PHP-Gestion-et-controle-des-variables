@@ -7,8 +7,12 @@
  */
 $var = 0;
 // TODO votre code ici.
-
-
+if(empty($var)){
+    echo 'la variable est vide';
+}
+else {
+    echo 'pas vide';
+}
 
 
 /**
@@ -16,12 +20,21 @@ $var = 0;
  */
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
-
+unset($eraseMe);
+//print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
+
+$newArr = [
+  "Lundi",
+  "Mardi",
+  "Mercredi",
+];
+
+var_dump($newArr);
 
 echo "<br>";
 
@@ -29,7 +42,7 @@ echo "<br>";
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
-
+print_r($newArr);
 echo "<br>";
 
 
@@ -39,8 +52,13 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
-
-
+if(isset($tab['doNotExists'])){
+    echo 'Existe';
+}
+else {
+    echo 'Existe pas';
+}
+echo '<br>';
 /**
  * 6. Créez une variable contenant:
  *    - un booléen
@@ -63,3 +81,21 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+$boo = true;
+$intNbr = 5;
+$floatNbr = 2.2;
+$txt = "chaine";
+
+function varType ($var){
+    echo is_bool($var) ? 'boolean' : (is_int($var) ? 'entier' : (is_float($var) ? 'float' : (is_string($var) ? 'string' : null))) ;
+}
+
+varType($boo);
+echo '<br>';
+varType($intNbr);
+echo '<br>';
+varType($floatNbr);
+echo '<br>';
+varType($txt);
+echo '<br>';
+
